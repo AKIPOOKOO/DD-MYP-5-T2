@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pairing page</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="try2.js"></script>
+</head>
+<body style="background-color: #143642 ;">
+  <h1 style="color: #fff; text-align: center;">This is the Locals page! Volunteer to help newcomers out! Use the search bar to search by specific interest or hobbies!</h1>
+  <button onclick="window.open('pchat.html', '_blank');" id="next-page" class="next-page">Common Society Chat</button>>
+  <button onclick="window.open('chat.html', '_blank');" id="pvt-page" class="pvt-page">Private chat</button>
+  <button onclick="window.open('home.html', '_blank');" id="prev-page" class="prev-page">Back</button>     
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    .button-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px; /* Larger size */
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+
+    /* Optional: Add hover effect for the buttons */
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  
+    <div>
+      <input type="text" id="search-bar" placeholder="Search keywords for interest and hobbies" />
+    </div>
+<!-- pairing.html -->
+    <div id="newcomer-containers" class="grid-container">
+      <!-- Newcomer containers will be appended here -->
+    </div>
+    <script>
+      // Retrieve user information from local storage and create separate containers
+      document.addEventListener("DOMContentLoaded", function () {
+        const newcomerContainers = document.getElementById("newcomer-containers");
+        const searchBar = document.getElementById("search-bar");
+  
+        // Retrieve user information from local storage
+        const existingNewcomerInfo = JSON.parse(localStorage.getItem("newcomer-info")) || [];
+  
+        // Function to create a container for user information
+        const createContainer = (userInfo) => {
+          const container = document.createElement("div");
+          container.classList.add("newcomer-containers");
+          container.innerHTML = `
+            <h2>${userInfo.name}</h2>
+            <p><strong>Hobbies and Interests:</strong> ${userInfo.hobbies}</p>
+            <p><strong>Personality:</strong> ${userInfo.personality}</p>
+            <p><strong>Skills:</strong> ${userInfo.skills}</p>
+            
+          `;
+          newcomerContainers.appendChild(container);
+        };
+  
+        // Create containers for user information
+        existingNewcomerInfo.forEach((userInfo, index) => {
+          createContainer(userInfo);
+        });
+  
+        // Function to highlight and display containers matching search keywords
+        searchBar.addEventListener("input", function () {
+          const keyword = searchBar.value.toLowerCase();
+          const containers = document.querySelectorAll(".newcomer-containers");
+  
+          containers.forEach((container) => {
+            const text = container.innerText.toLowerCase();
+            if (text.includes(keyword)) {
+              container.classList.add("highlight");
+              container.style.display = "block";
+            } else {
+              container.classList.remove("highlight");
+              container.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+<style>
+    body {
+      margin: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Four columns, adjust as needed */
+      grid-gap: 20px; /* Adjust the gap between containers as needed */
+      margin-top: 20px;
+    }
+
+    .newcomer-containers {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .highlight {
+      background-color: yellow; /* Change the highlight color as needed */
+    }
+</style>  
+
+<style>
+  body {
+    margin: 20px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns, adjust as needed */
+    grid-gap: 20px; /* Adjust the gap between containers as needed */
+    margin-top: 20px;
+  }
+
+  .newcomer-containers {
+    border: 1px solid #000000;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .highlight {
+    background-color: yellow; /* Change the highlight color as needed */
+  }
+</style> 
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinculo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<body id="signup-background" style="background-image: url(sign\ up.PNG);"> </body>
+  <div class="signup-container">
+    <div class="signup-title">Sign Up</div>
+    <div class="name-S"><input type="text" name="name" id="nameS" placeholder="Name" autocomplete="on"></div>
+    <div class="email-S">
+        <input type="email" name="email" id="emailS" placeholder="Email" autocomplete="on">
+    </div>
+    <div class="password-S">
+        <input type="password" name="password" id="passwordS" placeholder="Password" autocomplete="on">
+    </div>
+    <div class="swap-login-signup"><a href="login.html" id="login-signup-swap">Already have an account? Login here</a></div>
+    <button id="button-signup">Sign Up</button>
+  </div>
+</body>
+</html>

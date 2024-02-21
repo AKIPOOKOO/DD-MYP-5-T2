@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #chat-container {
+      flex: 1;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: scroll;
+    }
+
+    #chat-messages {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      max-height: 75vh;
+      overflow-y: scroll;
+    }
+
+    #input-container {
+      display: flex;
+      margin-top: 10px;
+    }
+
+    #name-input, #message-input, #send-button {
+      padding: 5px;
+    }
+
+    #name-input, #message-input {
+      flex: 1;
+    }
+
+    #send-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <h1>Chat Room</h1>
+    <div id="chat-messages"></div>
+    <div id="input-container">
+      <input type="text" id="name-input" placeholder="Enter your name">
+      <input type="text" id="message-input" placeholder="Type your message">
+      <button id="send-button">Send</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const chatMessages = document.getElementById("chat-messages");
+      const nameInput = document.getElementById("name-input");
+      const messageInput = document.getElementById("message-input");
+      const sendButton = document.getElementById("send-button");
+
+      // Load chat messages from localStorage
+      const savedMessages = JSON.parse(localStorage.getItem("chatMessages")) || [];
+
+      // Load the user's name from localStorage
+      const sessionName = localStorage.getItem("userName");
+
+      // Set the name input if a name has been saved
+      if (sessionName) {
+        nameInput.value = sessionName;
+      }
+
+      // Display saved messages
+      savedMessages.forEach(message => {
+        const messageElement = document.createElement("p");
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+      });
+
+      sendButton.addEventListener("click", function() {
+        const name = nameInput.value;
+        const message = messageInput.value;
+
+        if (name && message) {
+          const messageText = `${name}: ${message}`;
+          const messageElement = document.createElement("p");
+          messageElement.textContent = messageText;
+          chatMessages.appendChild(messageElement);
+
+          // Save the message to localStorage
+          savedMessages.push(messageText);
+          localStorage.setItem("chatMessages", JSON.stringify(savedMessages));
+
+          // Save the user's name to localStorage
+          localStorage.setItem("userName", name);
+
+          // Clear the message input
+          messageInput.value = "";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

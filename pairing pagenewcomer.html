@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pairing page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-color: #A8201A;">
+  <h1 style="color: #fff; text-align: center;">This is the newcomers page! Here you can find the profiles of locals in your area! Use the search bar to search by specific interest or hobbies!
+  </h1>
+  <button onclick="window.open('pchat.html', '_blank');" id="next-page" class="next-page">Common Society Chat</button>
+  <button onclick="window.open('chat.html', '_blank');" id="pvt-page" class="pvt-page">Private chat</button>
+  <button onclick="window.open('home.html', '_blank');" id="prev-page" class="prev-page">Back</button>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+
+    .button-container button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px 20px; /* Larger size */
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+
+    /* Optional: Add hover effect for the buttons */
+    .button-container button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+  <div style="text-align: center; margin: 20px;">
+    <input type="text" id="search-bar" placeholder="Search keywords for interest and hobbies" />
+  </div>
+
+  <div id="local-containers" class="grid-container">
+    <!-- Local containers will be appended here -->
+  </div>
+
+  <style>
+    body {
+      margin: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Four columns, adjust as needed */
+      grid-gap: 20px; /* Adjust the gap between containers as needed */
+      margin-top: 20px;
+    }
+
+    .local-container-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .highlight {
+      background-color: yellow; /* Change the highlight color as needed */
+    }
+  </style>  
+  <style>
+
+   .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Four columns, adjust as needed */
+      grid-gap: 20px; /* Adjust the gap between containers as needed */
+    }
+
+    .local-container-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #fff;
+    }
+
+    .highlight {
+      background-color: yellow; /* Change the highlight color as needed */
+    }
+  </style>
+  <script>
+    // Retrieve user information from local storage and create separate containers
+    document.addEventListener("DOMContentLoaded", function () {
+      const localContainers = document.getElementById("local-containers");
+      const searchBar = document.getElementById("search-bar");
+
+      // Retrieve user information from local storage
+      const userInformation = JSON.parse(localStorage.getItem("user-info")) || [];
+
+      // Function to create a container for user information
+      const createContainer = (userInfo) => {
+        const container = document.createElement("div");
+        container.classList.add("local-container-box");
+        container.innerHTML = `
+          <h2>${userInfo.name}</h2>
+          <p><strong>Hobbies and Interests:</strong> ${userInfo.hobbies}</p>
+          <p><strong>Personality:</strong> ${userInfo.personality}</p>
+          <p><strong>Skills:</strong> ${userInfo.skills}</p>
+        `;
+        localContainers.appendChild(container);
+      };
+
+      // Create containers for user information
+      userInformation.forEach((userInfo, index) => {
+        createContainer(userInfo);
+      });
+
+      // Function to highlight and display containers matching search keywords
+      searchBar.addEventListener("input", function () {
+        const keyword = searchBar.value.toLowerCase();
+        const containers = document.querySelectorAll(".local-container-box");
+
+        containers.forEach((container) => {
+          const text = container.innerText.toLowerCase();
+          if (text.includes(keyword)) {
+            container.classList.add("highlight");
+            container.style.display = "block";
+          } else {
+            container.classList.remove("highlight");
+            container.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

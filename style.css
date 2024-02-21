@@ -1,0 +1,307 @@
+/* Style for the main container */
+/* Style for the login title */
+#login-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .login-container {
+    background-color: rgba(255, 255, 255, 0.87); /* White color with 87% opacity */
+    width: 330px; /* Adjust the width as needed */
+    height: 150px;
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 30px;
+    text-align: center; /* Center the content horizontally */
+  }
+  
+  /* Style for the email input field */
+  #emailL {
+    width: 300px;
+  }
+  
+  /* Style for the password input field */
+  #passwordL {
+    width: 300px;
+  }
+  
+  /* Style for the swap-login-signup link */
+  #login-signup-swap {
+    text-decoration: none;
+    color: #007bff; /* Change to your preferred link color */
+  }
+  
+  /* Style for the Login button */
+  #button-login {
+    display: block;
+    width: 100%;
+    background-color: #e4c89e; /* Change to your preferred button color */
+    color: #000000; /* Button text color */
+    border: none;
+    padding: 10px;
+    border-color: #000;
+    cursor: pointer;
+  }
+  
+  #button-login:hover {
+    background-color: #E89831; /* Button background color on hover */
+    color: #fff; /* Button text color on hover */
+  }
+/* signup   */
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.87); /* White color with 87% opacity */
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    height: 200px;
+    text-align: center; /* Center the content horizontally */
+  }
+  
+  /* Rest of your CSS styles for the elements inside the container remain the same */
+  /* ... */
+  
+  
+  /* Style for the sign-up title */
+  .signup-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the input fields */
+  .name-S,
+  .email-S,
+  .password-S {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 300px
+  }
+  
+  /* Style for the swap-login-signup link */
+  .swap-login-signup {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  #login-signup-swap {
+    text-decoration: none;
+    color: #007bff; /* Change to your preferred link color */
+  }
+  
+  /* Style for the Sign Up button */
+  #button-signup {
+    display: block;
+    width: 100%;
+    background-color: #e4c89e; /* Change to your preferred button color */
+    color: #000000; /* Button text color */
+    border: none;
+    padding: 10px;
+    border-color: #000;
+    cursor: pointer;
+  }
+  
+  #button-signup:hover {
+    background-color: #E89831; /* Button background color on hover */
+    color: #fff; /* Button text color on hover */
+  }
+  
+.login-button:hover {
+background-color: #000; /* Button background color on hover */
+color: #fff; /* Button text color on hover */
+}
+
+.signup-button:hover {
+    background-color: #E89831; /* Button background color on hover */
+    color: #fff; /* Button text color on hover */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.home-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 450px;
+    width: 1200px;
+    margin-top: 100px;
+}
+
+
+/* Style for input containers */
+.input-container {
+    margin-bottom: 20px;
+    text-align: left; /* Align label and input to the left */
+}
+
+/* Style for labels */
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for text inputs */
+.input-container input[type="text"] {
+    width: 1100px 
+}
+.local-button {
+    width: 120px; /* Adjust the width as needed */
+    height: 40px;
+    background-color: #143642;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for the "Newcomer" button */
+.newcomer-button {
+    width: 120px; /* Adjust the width as needed */
+    height: 40px;
+    background-color: #A8201A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.local-container { 
+    width: 1000px;
+    height: 300px;
+    color: #143642;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    height: 450px;
+    width: 200px;
+}
+
+.newcomer-containers { 
+  width: 1000px;
+  height: 300px;
+  color: #143642;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  height: 450px;
+  width: 200px;
+}
+
+/* CAHT FEATURE NOW  */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Chat Window Styles */
+  .chat-window {
+    width: 500px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .chat-area {
+    height: 400px;
+    overflow-y: scroll;
+    padding: 20px;
+  }
+  
+  .chat-messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .user-input {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  #message-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #send-button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #send-button:hover {
+    background-color: #0056b3;
+  }
+
+/* Add some basic styling for the "Click to chat" button */
+.click-to-chat-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.click-to-chat-button:hover {
+  background-color: #2980b9;
+}
+
+.chat-button { 
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#logout-page {
+  position: relative;
+  
+}
+
+#signup-background { 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+}

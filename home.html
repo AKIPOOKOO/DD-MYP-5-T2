@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-color: #e49637;">   
+  <div class="home-container">
+    <h1>Create your profile description that will be displayed to others!</h1>
+    <form id="identity-form">
+      <div class="input-container">
+        <label for="hobbies">List your hobbies and interests:</label>
+        <input type="text" id="hobbies" placeholder="e.g., Reading, Cooking, Traveling" />
+      </div>
+      <div class="input-container">
+        <label for="personality">Describe your personality:</label>
+        <input type="text" id="personality" placeholder="e.g., Friendly, Outgoing, Introverted" />
+      </div>
+      <div class="input-container">
+        <label for="skills">Things you are good in:</label>
+        <input type="text" id="skills" placeholder="e.g., Programming, Writing, Photography" />
+      </div>
+      <div class="input-container">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+      </div>
+    </form>
+    <div class="input-container">
+      <label>Are you a -</label>
+      <button type="button" id="local-button" class="local-button">Local</button>
+      <span class="or-label">OR</span>
+      <button type="button" id="newcomer-button" class="newcomer-button">Newcomer</button>
+      <button onclick="window.open('signup.html', '_blank');" id="logout-page" class="logout-page">Or you can Logout</button> 
+    </div>
+    <a href="pchat.html" target="_blank" id="next-page" class="next-page">Common Society Chat</a>
+  </div>
+  
+  <script src="try2.js"></script>
+
+  <script type="text/javascript">
+    document.getElementById("newcomer-button").onclick = function () {
+        location.href = "pairing pagenewcomer.html";
+    };
+</script>
+<script type="text/javascript">
+  document.getElementById("local-button").onclick = function () {
+      location.href = "pairing.html";
+  };
+</script>
+</body>
+</html>
